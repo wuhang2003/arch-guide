@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="title" content="archlinux 简明指南 —— Arch Linux 安装使用教程"><link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><meta name="keywords" href="archlinux 安装,archlinux 教程,archlinux 指南,archlinux,Arch Linux,Linux"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta property="og:type" content="website"><meta property="og:url" content="https://arch.icekylin.online/"><meta property="og:title" content="archlinux 简明指南 — Arch Linux 安装使用教程"><meta property="og:description" content="本指南包含从 archlinux 安装、显卡驱动、日常软件配置，到多媒体制作、编程等你可能需要的全部内容。让 archlinux 成为你的常用系统吧！"><meta property="og:image" content="https://arch.icekylin.online/image-400x400.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://arch.icekylin.online/"><meta property="twitter:title" content="archlinux 简明指南 — Arch Linux 安装使用教程"><meta property="twitter:description" content="本指南包含从 archlinux 安装、显卡驱动、日常软件配置，到多媒体制作、编程等你可能需要的全部内容。让 archlinux 成为你的常用系统吧！"><meta property="twitter:image" content="https://arch.icekylin.online/image.jpg"><meta name="baidu-site-verification" content="code-CJJd7gooWE"><meta name="msvalidate.01" content="5F7926C2A8770A498525E9E64994663C"><meta name="360-site-verification" content="87416cd673fcfd727db0aeb869a17caf"><link rel="stylesheet" type="text/css" href="/static/css/font.css"><script>var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e7059486ad3b16e21ea7058836c51b9b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>(function () {
+  var bp = document.createElement("script");
+  var curProtocol = window.location.protocol.split(":")[0];
+  if (curProtocol === "https") {
+    bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+  } else {
+    bp.src = "http://push.zhanzhang.baidu.com/push.js";
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MQRPJQK9SC"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+    
+gtag('config', 'G-MQRPJQK9SC');</script><title>archlinux 简明指南 — Arch Linux 安装使用教程</title><meta name="description" content="本指南包含从 archlinux 安装、显卡驱动、日常软件配置，到多媒体制作、编程等你可能需要的全部内容。让 archlinux 成为你的常用系统吧！">
+    <link rel="modulepreload" href="/assets/app.ef2a3b0d.js"><link rel="modulepreload" href="/assets/404.html.aa069333.js"><link rel="modulepreload" href="/assets/404.html.265028f6.js"><link rel="prefetch" href="/assets/index.html.242a9d12.js"><link rel="prefetch" href="/assets/prologue.html.0bb1f002.js"><link rel="prefetch" href="/assets/beauty-1.html.16ddf0ed.js"><link rel="prefetch" href="/assets/beauty-2.html.826d996c.js"><link rel="prefetch" href="/assets/beauty-3.html.31d1c7a5.js"><link rel="prefetch" href="/assets/btrfs.html.9ba60e7b.js"><link rel="prefetch" href="/assets/debug.html.b8189e8b.js"><link rel="prefetch" href="/assets/make-install-disk.html.43704d82.js"><link rel="prefetch" href="/assets/optional-cfg-1.html.fce07e09.js"><link rel="prefetch" href="/assets/optional-cfg-2.html.0e8c101e.js"><link rel="prefetch" href="/assets/power-ctl.html.12504945.js"><link rel="prefetch" href="/assets/system-ctl.html.ff0a9eb8.js"><link rel="prefetch" href="/assets/android.html.c01f8efd.js"><link rel="prefetch" href="/assets/collaboration.html.170d0183.js"><link rel="prefetch" href="/assets/communication.html.795b3d39.js"><link rel="prefetch" href="/assets/daily.html.95a3a332.js"><link rel="prefetch" href="/assets/media.html.5c2b7a16.js"><link rel="prefetch" href="/assets/office.html.8337b698.js"><link rel="prefetch" href="/assets/play.html.b90f2c35.js"><link rel="prefetch" href="/assets/remote.html.cc0704a7.js"><link rel="prefetch" href="/assets/audio.html.f8c009cf.js"><link rel="prefetch" href="/assets/code.html.e2d731f6.js"><link rel="prefetch" href="/assets/image.html.21129597.js"><link rel="prefetch" href="/assets/media.html.8cd4f158.js"><link rel="prefetch" href="/assets/vedio.html.86753e48.js"><link rel="prefetch" href="/assets/about.html.9a75aaa3.js"><link rel="prefetch" href="/assets/contribute.html.de868a1c.js"><link rel="prefetch" href="/assets/contributor-covenant.html.06a1a2fa.js"><link rel="prefetch" href="/assets/copyright.html.1de739f9.js"><link rel="prefetch" href="/assets/postscript.html.7d69af4f.js"><link rel="prefetch" href="/assets/head-on-blow.html.770c9be6.js"><link rel="prefetch" href="/assets/understand.html.f01e0aea.js"><link rel="prefetch" href="/assets/basic-install-detail.html.ff95a3d0.js"><link rel="prefetch" href="/assets/basic-install.html.51550bcc.js"><link rel="prefetch" href="/assets/desktop-env-and-app.html.44386410.js"><link rel="prefetch" href="/assets/graphic-driver.html.886c4c28.js"><link rel="prefetch" href="/assets/pre-install.html.337ff3e2.js"><link rel="prefetch" href="/assets/pre-virt.html.1765653c.js"><link rel="prefetch" href="/assets/transparent.html.f571997a.js"><link rel="prefetch" href="/assets/index.html.29c3fd17.js"><link rel="prefetch" href="/assets/prologue.html.c8511660.js"><link rel="prefetch" href="/assets/beauty-1.html.55d4d6a3.js"><link rel="prefetch" href="/assets/beauty-2.html.17ae51d5.js"><link rel="prefetch" href="/assets/beauty-3.html.e8d65f0d.js"><link rel="prefetch" href="/assets/btrfs.html.fb3176e0.js"><link rel="prefetch" href="/assets/debug.html.82a46b1b.js"><link rel="prefetch" href="/assets/make-install-disk.html.e3995261.js"><link rel="prefetch" href="/assets/optional-cfg-1.html.3aa5eb8f.js"><link rel="prefetch" href="/assets/optional-cfg-2.html.7b082444.js"><link rel="prefetch" href="/assets/power-ctl.html.0c781b31.js"><link rel="prefetch" href="/assets/system-ctl.html.148cac43.js"><link rel="prefetch" href="/assets/android.html.04814296.js"><link rel="prefetch" href="/assets/collaboration.html.1608f570.js"><link rel="prefetch" href="/assets/communication.html.c7ffd03b.js"><link rel="prefetch" href="/assets/daily.html.8334e131.js"><link rel="prefetch" href="/assets/media.html.1c288362.js"><link rel="prefetch" href="/assets/office.html.3d3484c1.js"><link rel="prefetch" href="/assets/play.html.dca53d1f.js"><link rel="prefetch" href="/assets/remote.html.0d35ff4b.js"><link rel="prefetch" href="/assets/audio.html.4b4b755c.js"><link rel="prefetch" href="/assets/code.html.bcd47a74.js"><link rel="prefetch" href="/assets/image.html.50c12854.js"><link rel="prefetch" href="/assets/media.html.0741dc65.js"><link rel="prefetch" href="/assets/vedio.html.110455f6.js"><link rel="prefetch" href="/assets/about.html.4d80e2f5.js"><link rel="prefetch" href="/assets/contribute.html.4c35a49d.js"><link rel="prefetch" href="/assets/contributor-covenant.html.e450dafc.js"><link rel="prefetch" href="/assets/copyright.html.698f322c.js"><link rel="prefetch" href="/assets/postscript.html.1899b844.js"><link rel="prefetch" href="/assets/head-on-blow.html.5449da4f.js"><link rel="prefetch" href="/assets/understand.html.0c8e6fd1.js"><link rel="prefetch" href="/assets/basic-install-detail.html.43bcb3db.js"><link rel="prefetch" href="/assets/basic-install.html.f57eb121.js"><link rel="prefetch" href="/assets/desktop-env-and-app.html.f3cbfae6.js"><link rel="prefetch" href="/assets/graphic-driver.html.f6602510.js"><link rel="prefetch" href="/assets/pre-install.html.3fb39c19.js"><link rel="prefetch" href="/assets/pre-virt.html.d4761c6b.js"><link rel="prefetch" href="/assets/transparent.html.1151f1b2.js"><link rel="prefetch" href="/assets/404.8c5226cd.js"><link rel="prefetch" href="/assets/Layout.edeff179.js">
+    <link rel="stylesheet" href="/assets/style.9d40b4d3.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>👻 页面走丢了</blockquote><a href="/" class="">🏠 把我带回家</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.ef2a3b0d.js" defer></script>
+  </body>
+</html>
